@@ -1,0 +1,2773 @@
+{
+  "generated_at": "2026-07-18T14:32:18.353592+00:00",
+  "runtime": {
+    "python": "3.12.13",
+    "camel_tools": "1.6.0",
+    "torch": "2.11.0",
+    "transformers": "4.43.4",
+    "top": 5,
+    "pretrained_cache": false,
+    "load_seconds": 0.993516
+  },
+  "cases": {
+    "path": "camel-bert-minimal-cases-20260718.jsonl",
+    "sha256": "56560e063f8612f7e95a6c7ca63f87b3a2a0e61c21e205b89680ad8a95526ab8"
+  },
+  "model_config": {
+    "description": "MSA unfactored model based on Inoue et al., 2022 with calima-msa-r13 analyzer.",
+    "db_name": "calima-msa-r13",
+    "scorer": "uniform",
+    "tie_breaker": "tag",
+    "feature": "feats_14",
+    "backoff": "ADD_PROP",
+    "ranking_cache": "calima-msa-r13"
+  },
+  "model_files": [
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/LICENSE",
+      "size": 1086,
+      "sha256": "8581afa0312be338c553bb2e084c62d526aca4d0451045a92b9fc85b42a51469"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/config.json",
+      "size": 609237,
+      "sha256": "e47ce7bfcf3ab60a70b5490e347f5513752a0606df99d14774b8f3301ff491b9"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/default_config.json",
+      "size": 281,
+      "sha256": "dd013630544f8c03de85df8e3afa9270b846bbd714369be4c641ee0fb0c7fe7b"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/mle_model.json",
+      "size": 1120136,
+      "sha256": "317fed1dd79261edbd8acff9d37e333dece47e37d4034fcf601d390f7aac176c"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/model.safetensors",
+      "size": 442972648,
+      "sha256": "c149720a21311555bf3937c36ad539f9f3a52665a082eb1af5980bc2f9ce8c04"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/special_tokens_map.json",
+      "size": 112,
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/tokenizer_config.json",
+      "size": 86,
+      "sha256": "73f5e97ab29042bac49dc96f7b8a7a790994509bbd2fe3e9cd4f59affc46c2ce"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/disambig_bert_unfactored/msa/vocab.txt",
+      "size": 304561,
+      "sha256": "1df5f8da6ad6c56153c7a974c0b149bb7a0a6e332bcfa795c99deee6c1136ce2"
+    }
+  ],
+  "morphology_files": [
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/morphology_db/calima-msa-r13/LICENSE",
+      "size": 16919,
+      "sha256": "7a71f85f07e46759dcc1c16dba64352d9932447759cf71ca3deae3729d85d23e"
+    },
+    {
+      "path": "/data/quranspace/camel-tools-1.6-eval-20260718/data/data/morphology_db/calima-msa-r13/morphology.db",
+      "size": 40471399,
+      "sha256": "195bc25a333237a2126470da888d7936b59ed3729f9210e0a4194ba43497dd70"
+    }
+  ],
+  "results": [
+    {
+      "id": "isolated_audhu",
+      "text": "أَعُوذُ",
+      "elapsed_seconds": 0.563944,
+      "tokens": [
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            },
+            {
+              "score": 0.38461538461515304,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diacritized_qul_audhu",
+      "text": "قُلْ أَعُوذُ",
+      "elapsed_seconds": 0.019186,
+      "tokens": [
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diacritized_qul_audhu_birabbi",
+      "text": "قُلْ أَعُوذُ بِرَبِّ",
+      "elapsed_seconds": 0.018749,
+      "tokens": [
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            },
+            {
+              "score": 0.38461538461515304,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبِّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isolated_waqul",
+      "text": "وقُلْ",
+      "elapsed_seconds": 0.018078,
+      "tokens": [
+        {
+          "surface": "وقُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1ُ2ّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1ِ2ّ"
+              }
+            },
+            {
+              "score": 0.923094184201913,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1ُ2ٍّ"
+              }
+            },
+            {
+              "score": 0.923094184201913,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1ِ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9230783227291264,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1ُ2ٌّ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short_falaq_query",
+      "text": "قل أعوذ برب الفلق",
+      "elapsed_seconds": 0.021143,
+      "tokens": [
+        {
+          "surface": "قل",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أعوذ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            },
+            {
+              "score": 0.38461538461515304,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "برب",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الفلق",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "falaq_passage_r1",
+      "text": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ قُلْ أَعُوذُ بِرَبّ الفلق أي الصبح أو الخلق أو هو وادفى جهنم أوجبٌّ فيها",
+      "elapsed_seconds": 0.03301,
+      "tokens": [
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبِّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الْفَلَقِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الفلق",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أي",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "أَيْ",
+                "source": "lex",
+                "stemgloss": "i.e.;in_other_words",
+                "pos": "conj",
+                "root": "#.#",
+                "pattern": "أَيْ"
+              }
+            },
+            {
+              "score": 0.6923600289802758,
+              "analysis": {
+                "lex": "أَي",
+                "source": "lex",
+                "stemgloss": "A.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.6923600289802758,
+              "analysis": {
+                "lex": "أَي",
+                "source": "lex",
+                "stemgloss": "I.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.6923600289802758,
+              "analysis": {
+                "lex": "آي",
+                "source": "spvar",
+                "stemgloss": "I.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.6923600289802758,
+              "analysis": {
+                "lex": "آي",
+                "source": "spvar",
+                "stemgloss": "A.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الصبح",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "صُبْح",
+                "source": "lex",
+                "stemgloss": "morning;daybreak",
+                "pos": "noun",
+                "root": "ص.ب.ح",
+                "pattern": "ال1ُ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "صُبْح",
+                "source": "lex",
+                "stemgloss": "morning;daybreak",
+                "pos": "noun",
+                "root": "ص.ب.ح",
+                "pattern": "ال1ُ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "صُبْح",
+                "source": "lex",
+                "stemgloss": "morning;daybreak",
+                "pos": "noun",
+                "root": "ص.ب.ح",
+                "pattern": "ال1ُ2ْ3ُ"
+              }
+            },
+            {
+              "score": 0.9269973753190126,
+              "analysis": {
+                "lex": "صُبْح",
+                "source": "lex",
+                "stemgloss": "morning;daybreak",
+                "pos": "noun",
+                "root": "ص.ب.ح",
+                "pattern": "ال1ُ2ْ3"
+              }
+            },
+            {
+              "score": 0.7129517555870997,
+              "analysis": {
+                "lex": "صبح",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أو",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "أَو",
+                "source": "lex",
+                "stemgloss": "or",
+                "pos": "conj",
+                "root": "#.#.ن",
+                "pattern": "أَوْ"
+              }
+            },
+            {
+              "score": 0.6429158106212566,
+              "analysis": {
+                "lex": "أُو",
+                "source": "lex",
+                "stemgloss": "O.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.5713122224209496,
+              "analysis": {
+                "lex": "او",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الخلق",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "خَلْق",
+                "source": "lex",
+                "stemgloss": "creation",
+                "pos": "noun",
+                "root": "خ.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "خُلْق",
+                "source": "lex",
+                "stemgloss": "character;morality",
+                "pos": "noun",
+                "root": "خ.ل.ق",
+                "pattern": "ال1ُ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "خَلَق",
+                "source": "lex",
+                "stemgloss": "shabby;threadbare",
+                "pos": "noun",
+                "root": "خ.ل.ق",
+                "pattern": "ال1َ2َ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "خِلْقَة",
+                "source": "lex",
+                "stemgloss": "nature;disposition",
+                "pos": "noun",
+                "root": "خ.ل.ق",
+                "pattern": "ال1ِ2َ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "خَلْق",
+                "source": "lex",
+                "stemgloss": "creation",
+                "pos": "noun",
+                "root": "خ.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أو",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "أَو",
+                "source": "lex",
+                "stemgloss": "or",
+                "pos": "conj",
+                "root": "#.#.ن",
+                "pattern": "أَوْ"
+              }
+            },
+            {
+              "score": 0.6429158106212566,
+              "analysis": {
+                "lex": "أُو",
+                "source": "lex",
+                "stemgloss": "O.",
+                "pos": "abbrev",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.5713122224209496,
+              "analysis": {
+                "lex": "او",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "هو",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "هُوَ",
+                "source": "lex",
+                "stemgloss": "it;he",
+                "pos": "pron",
+                "root": "ه",
+                "pattern": "1ُوَ"
+              }
+            },
+            {
+              "score": 0.787722315617682,
+              "analysis": {
+                "lex": "هُو",
+                "source": "lex",
+                "stemgloss": "Ho_(in_\"Ho_Chi_Minh\")",
+                "pos": "noun_prop",
+                "root": "NTWS",
+                "pattern": "NTWS"
+              }
+            },
+            {
+              "score": 0.6428287689279942,
+              "analysis": {
+                "lex": "هو",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "وادفى",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "ادفي",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.9090909090909091,
+              "analysis": {
+                "lex": "وادفي",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.9090909090909091,
+              "analysis": {
+                "lex": "ادفي",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.9090909090909091,
+              "analysis": {
+                "lex": "ادفي",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "جهنم",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "جَهَنَّم",
+                "source": "lex",
+                "stemgloss": "hell",
+                "pos": "noun",
+                "root": "ج.ه.ن.م",
+                "pattern": "1َ2َ3َّ4َ"
+              }
+            },
+            {
+              "score": 0.9170903403402195,
+              "analysis": {
+                "lex": "جَهَنَّم",
+                "source": "lex",
+                "stemgloss": "hell",
+                "pos": "noun",
+                "root": "ج.ه.ن.م",
+                "pattern": "1َ2َ3َّ4ِ"
+              }
+            },
+            {
+              "score": 0.9159137216278442,
+              "analysis": {
+                "lex": "جَهَنَّم",
+                "source": "lex",
+                "stemgloss": "hell",
+                "pos": "noun",
+                "root": "ج.ه.ن.م",
+                "pattern": "1َ2َ3َّ4ُ"
+              }
+            },
+            {
+              "score": 0.8325163969357623,
+              "analysis": {
+                "lex": "جَهَنَّم",
+                "source": "lex",
+                "stemgloss": "hell",
+                "pos": "noun",
+                "root": "ج.ه.ن.م",
+                "pattern": "1َ2َ3َّ4"
+              }
+            },
+            {
+              "score": 0.8322863363593278,
+              "analysis": {
+                "lex": "جهنم",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أوجبٌّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "أَوْجَب",
+                "source": "lex",
+                "stemgloss": "make_necessary;obligate",
+                "pos": "verb",
+                "root": "#.ج.ب",
+                "pattern": "أَوْ2َ3َ"
+              }
+            },
+            {
+              "score": 0.7852744950968484,
+              "analysis": {
+                "lex": "أَوْجَب",
+                "source": "lex",
+                "stemgloss": "make_necessary;obligate",
+                "pos": "verb",
+                "root": "#.ج.ب",
+                "pattern": "أُو2ِ3"
+              }
+            },
+            {
+              "score": 0.7852744950968484,
+              "analysis": {
+                "lex": "وَجَّب",
+                "source": "lex",
+                "stemgloss": "make_necessary;obligate",
+                "pos": "verb",
+                "root": "#.ج.ب",
+                "pattern": "أُوَ2ِّ3"
+              }
+            },
+            {
+              "score": 0.7138859046330271,
+              "analysis": {
+                "lex": "أَوْجَب",
+                "source": "lex",
+                "stemgloss": "be_made_necessary;be_obligated",
+                "pos": "verb",
+                "root": "#.ج.ب",
+                "pattern": "أُو2َ3"
+              }
+            },
+            {
+              "score": 0.3569429523164953,
+              "analysis": {
+                "lex": "اوجب",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "فيها",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فِي",
+                "source": "lex",
+                "stemgloss": "in",
+                "pos": "prep",
+                "root": "ف.#",
+                "pattern": "1ِيها"
+              }
+            },
+            {
+              "score": 0.4999329088516648,
+              "analysis": {
+                "lex": "فيها",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.42851392187285553,
+              "analysis": {
+                "lex": "يها",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "falaq_passage_r2",
+      "text": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ الْفَلَقِ قَوْلَهُ وقُلْ أَعُوذُ بِرَبِّ النَّاسِ النَّاسِ وَلَمْ يُتِمَّ سُورَةَ قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ عَنْوَنَهَا الْبُخَارِيُّ",
+      "elapsed_seconds": 0.033269,
+      "tokens": [
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبِّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الْفَلَقِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الْفَلَقِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "قَوْلَهُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قَوْل",
+                "source": "lex",
+                "stemgloss": "statement;remark",
+                "pos": "noun",
+                "root": "ق.#.ل",
+                "pattern": "1َوْ3ُهُ"
+              }
+            },
+            {
+              "score": 0.9286756625897995,
+              "analysis": {
+                "lex": "قَوْل",
+                "source": "lex",
+                "stemgloss": "statement;remark",
+                "pos": "noun",
+                "root": "ق.#.ل",
+                "pattern": "1َوْ3ِهِ"
+              }
+            },
+            {
+              "score": 0.9286074672576505,
+              "analysis": {
+                "lex": "قَوْل",
+                "source": "lex",
+                "stemgloss": "statement;remark",
+                "pos": "noun",
+                "root": "ق.#.ل",
+                "pattern": "1َوْ3َهُ"
+              }
+            },
+            {
+              "score": 0.9285522820857487,
+              "analysis": {
+                "lex": "قَوْل",
+                "source": "lex",
+                "stemgloss": "statement;remark",
+                "pos": "noun",
+                "root": "ق.#.ل",
+                "pattern": "1َوْ3ه"
+              }
+            },
+            {
+              "score": 0.8572449006706269,
+              "analysis": {
+                "lex": "قَوْلَة",
+                "source": "spvar",
+                "stemgloss": "remark",
+                "pos": "noun",
+                "root": "ق.#.ل",
+                "pattern": "1َوْ3َةُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "وقُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1َ2َّ"
+              }
+            },
+            {
+              "score": 0.9282114960294269,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1َ2َّ"
+              }
+            },
+            {
+              "score": 0.9282111222119223,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "وَ1َ2َّ"
+              }
+            },
+            {
+              "score": 0.856810490947405,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "وَ1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.7854094111023957,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "وَ1ُ3ْ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبِّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "النَّاسِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3ُ"
+              }
+            },
+            {
+              "score": 0.9269973753190126,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3"
+              }
+            },
+            {
+              "score": 0.7129517555870997,
+              "analysis": {
+                "lex": "ناس",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "النَّاسِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3ُ"
+              }
+            },
+            {
+              "score": 0.9269973753190126,
+              "analysis": {
+                "lex": "ناس",
+                "source": "lex",
+                "stemgloss": "people",
+                "pos": "noun",
+                "root": "ن.#.س",
+                "pattern": "ال1ا3"
+              }
+            },
+            {
+              "score": 0.7129517555870997,
+              "analysis": {
+                "lex": "ناس",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "وَلَمْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "لَم",
+                "source": "lex",
+                "stemgloss": "not",
+                "pos": "part_neg",
+                "root": "ل.م",
+                "pattern": "وَ1َ2ْ"
+              }
+            },
+            {
+              "score": 0.9285162937890828,
+              "analysis": {
+                "lex": "لَم",
+                "source": "lex",
+                "stemgloss": "not",
+                "pos": "part_neg",
+                "root": "ل.م",
+                "pattern": "وَ1َ2ْ"
+              }
+            },
+            {
+              "score": 0.928515919758767,
+              "analysis": {
+                "lex": "لَم",
+                "source": "lex",
+                "stemgloss": "not",
+                "pos": "part_neg",
+                "root": "ل.م",
+                "pattern": "وَ1َ2ْ"
+              }
+            },
+            {
+              "score": 0.5713962082983755,
+              "analysis": {
+                "lex": "لِمَ",
+                "source": "lex",
+                "stemgloss": "why",
+                "pos": "adv_interrog",
+                "root": "م",
+                "pattern": "وَلِ1َ"
+              }
+            },
+            {
+              "score": 0.5713944121592411,
+              "analysis": {
+                "lex": "لم",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "يُتِمَّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "تَمّ",
+                "source": "lex",
+                "stemgloss": "conclude;take_place",
+                "pos": "verb",
+                "root": "ت.م.م",
+                "pattern": "يَ1ِ2ّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "تام",
+                "source": "lex",
+                "stemgloss": "be_infatuated;be_enslaved",
+                "pos": "verb",
+                "root": "ت.#.م",
+                "pattern": "يَ1ِ3"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "أَتَمّ",
+                "source": "lex",
+                "stemgloss": "complete;conclude",
+                "pos": "verb",
+                "root": "ت.م.م",
+                "pattern": "يُ1ِ2ّ"
+              }
+            },
+            {
+              "score": 0.9236800505962451,
+              "analysis": {
+                "lex": "يَتَم",
+                "source": "lex",
+                "stemgloss": "be_orphaned",
+                "pos": "verb",
+                "root": "#.ت.م",
+                "pattern": "يَ2َ3َ"
+              }
+            },
+            {
+              "score": 0.9236800505962451,
+              "analysis": {
+                "lex": "يَتُم",
+                "source": "lex",
+                "stemgloss": "be_orphaned",
+                "pos": "verb",
+                "root": "#.ت.م",
+                "pattern": "يَ2ُ3َ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "سُورَةَ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "سَوْرَة",
+                "source": "lex",
+                "stemgloss": "vehemence;severity",
+                "pos": "noun",
+                "root": "س.#.ر",
+                "pattern": "1َوْ3َةٌ"
+              }
+            },
+            {
+              "score": 0.9287405142408921,
+              "analysis": {
+                "lex": "سَوْرَة",
+                "source": "lex",
+                "stemgloss": "vehemence;severity",
+                "pos": "noun",
+                "root": "س.#.ر",
+                "pattern": "1َوْ3َةٍ"
+              }
+            },
+            {
+              "score": 0.9286743691539304,
+              "analysis": {
+                "lex": "سَوْرَة",
+                "source": "lex",
+                "stemgloss": "vehemence;severity",
+                "pos": "noun",
+                "root": "س.#.ر",
+                "pattern": "1َوْ3َةً"
+              }
+            },
+            {
+              "score": 0.9286454437797603,
+              "analysis": {
+                "lex": "سَوْرَة",
+                "source": "lex",
+                "stemgloss": "vehemence;severity",
+                "pos": "noun",
+                "root": "س.#.ر",
+                "pattern": "1َوْ3َةُ"
+              }
+            },
+            {
+              "score": 0.9285276875461443,
+              "analysis": {
+                "lex": "سَوْرَة",
+                "source": "lex",
+                "stemgloss": "vehemence;severity",
+                "pos": "noun",
+                "root": "س.#.ر",
+                "pattern": "1َوْ3َة"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "قُلْ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "قال",
+                "source": "lex",
+                "stemgloss": "say",
+                "pos": "verb",
+                "root": "ق.#.ل",
+                "pattern": "1ُ3ْ"
+              }
+            },
+            {
+              "score": 0.8577016852913574,
+              "analysis": {
+                "lex": "قَلّ",
+                "source": "lex",
+                "stemgloss": "be_less;decrease;diminish",
+                "pos": "verb",
+                "root": "ق.ل.ل",
+                "pattern": "1َ2َّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.5013513036582349,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ِ2ِّ"
+              }
+            },
+            {
+              "score": 0.5010775538432131,
+              "analysis": {
+                "lex": "قِلّ",
+                "source": "lex",
+                "stemgloss": "paucity;paltriness",
+                "pos": "noun",
+                "root": "ق.ل.ل",
+                "pattern": "1ُ2َّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "أَعُوذُ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "اعوذ",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عاذ",
+                "source": "lex",
+                "stemgloss": "take_refuge;seek_protection",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أَ1ُو3"
+              }
+            },
+            {
+              "score": 0.6363636363643478,
+              "analysis": {
+                "lex": "عَوَّذ",
+                "source": "lex",
+                "stemgloss": "protect",
+                "pos": "verb",
+                "root": "ع.#.ذ",
+                "pattern": "أُ1َوِّ3"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "بِرَبِّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ِّ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "رُبّ",
+                "source": "lex",
+                "stemgloss": "thickened_juice;pulp",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1ُ2ِّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "lord;master",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            },
+            {
+              "score": 0.9284602168682323,
+              "analysis": {
+                "lex": "رَبّ",
+                "source": "lex",
+                "stemgloss": "owner;proprietor",
+                "pos": "noun",
+                "root": "ر.ب.ب",
+                "pattern": "بِ1َ2ٍّ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الْفَلَقِ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ِ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272979233590446,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "crack;fissure",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3َ"
+              }
+            },
+            {
+              "score": 0.9272468731460397,
+              "analysis": {
+                "lex": "فَلْق",
+                "source": "lex",
+                "stemgloss": "cracking;splitting;dawn",
+                "pos": "noun",
+                "root": "ف.ل.ق",
+                "pattern": "ال1َ2ْ3ُ"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "عَنْوَنَهَا",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "عنونها",
+                "source": "backoff",
+                "stemgloss": "NO_ANALYSIS",
+                "pos": "noun_prop",
+                "root": "O",
+                "pattern": "backoff"
+              }
+            },
+            {
+              "score": 0.7500517002798589,
+              "analysis": {
+                "lex": "عَنْوَن",
+                "source": "lex",
+                "stemgloss": "assign_a_title",
+                "pos": "verb",
+                "root": "ع.ن.ن",
+                "pattern": "1َ2ْوَ3َها"
+              }
+            },
+            {
+              "score": 0.7500517002798589,
+              "analysis": {
+                "lex": "عَنْوَن",
+                "source": "lex",
+                "stemgloss": "address",
+                "pos": "verb",
+                "root": "ع.ن.ن",
+                "pattern": "1َ2ْوَ3َها"
+              }
+            },
+            {
+              "score": 0.5000001308870253,
+              "analysis": {
+                "lex": "عَنا",
+                "source": "lex",
+                "stemgloss": "take_by_force;preoccupy",
+                "pos": "verb",
+                "root": "ع.ن.#",
+                "pattern": "1َ2َوْنَها"
+              }
+            },
+            {
+              "score": 0.5000001308870253,
+              "analysis": {
+                "lex": "عَنْوَن",
+                "source": "lex",
+                "stemgloss": "assign_a_title",
+                "pos": "verb",
+                "root": "ع.ن.ن",
+                "pattern": "1َ2ْوَ3َّها"
+              }
+            }
+          ]
+        },
+        {
+          "surface": "الْبُخَارِيُّ",
+          "analyses": [
+            {
+              "score": 1.0,
+              "analysis": {
+                "lex": "بُخارِيّ",
+                "source": "lex",
+                "stemgloss": "Bukhari",
+                "pos": "noun_prop",
+                "root": "NTWS",
+                "pattern": "الNTWS"
+              }
+            },
+            {
+              "score": 0.9283791539969727,
+              "analysis": {
+                "lex": "بُخارِيّ",
+                "source": "lex",
+                "stemgloss": "steam;steam-driven",
+                "pos": "adj",
+                "root": "ب.خ.ر",
+                "pattern": "ال1ُ2ا3ِيّ"
+              }
+            },
+            {
+              "score": 0.8575536768167994,
+              "analysis": {
+                "lex": "بُخارِيّ",
+                "source": "lex",
+                "stemgloss": "steam;steam-driven",
+                "pos": "adj",
+                "root": "ب.خ.ر",
+                "pattern": "ال1ُ2ا3ِيِّ"
+              }
+            },
+            {
+              "score": 0.8570881354818076,
+              "analysis": {
+                "lex": "بُخارِيّ",
+                "source": "lex",
+                "stemgloss": "steam;steam-driven",
+                "pos": "adj",
+                "root": "ب.خ.ر",
+                "pattern": "ال1ُ2ا3ِيُّ"
+              }
+            },
+            {
+              "score": 0.8570339397225807,
+              "analysis": {
+                "lex": "بُخارِيّ",
+                "source": "lex",
+                "stemgloss": "steam;steam-driven",
+                "pos": "adj",
+                "root": "ب.خ.ر",
+                "pattern": "ال1ُ2ا3ِيَّ"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

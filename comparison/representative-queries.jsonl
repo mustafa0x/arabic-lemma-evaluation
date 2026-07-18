@@ -1,0 +1,20 @@
+{"id":"prod_single_madhi","query":"المذي","bucket":"production_single","expectation":"A common jurisprudential term should preserve literal matches while connecting only justified inflectional forms."}
+{"id":"prod_single_miskat_typo","query":"مسكاة","bucket":"production_single_noise","expectation":"An unknown or misspelled form should remain a surface search rather than receive a fabricated lemma expansion."}
+{"id":"prod_single_aqiqah","query":"العقيقة","bucket":"production_single","expectation":"A concrete subject term should keep direct topical pages first."}
+{"id":"prod_single_yawning","query":"تثاؤب","bucket":"production_single","expectation":"A verbal noun should retrieve its direct subject without root-wide broadening."}
+{"id":"prod_single_azlil","query":"أظلل","bucket":"production_single_ambiguous","expectation":"An ambiguous inflected verb should keep surface occurrences ahead of any lemma family."}
+{"id":"prod_two_tafsir_keys","query":"تفسير المفاتيح","bucket":"production_two","expectation":"The two-word title-like phrase should rank direct co-occurrences ahead of morphology-only matches."}
+{"id":"prod_two_expiation_prayer","query":"صلاة الكفارة","bucket":"production_two","expectation":"The established phrase should remain more important than either lemma independently."}
+{"id":"prod_two_outside_mind","query":"خارج الذهن","bucket":"production_two","expectation":"A technical phrase should preserve its literal wording and order."}
+{"id":"prod_two_shortening_chapter","query":"باب القصر","bucket":"production_two","expectation":"Chapter headings containing the literal phrase should remain dominant."}
+{"id":"prod_two_remembrance","query":"ذكر الله","bucket":"production_two_ambiguous","expectation":"A very common phrase should not expand through roots into unrelated knowledge or mention senses."}
+{"id":"prod_three_father_unbeliever","query":"قتل أبيه الكافر","bucket":"production_three","expectation":"All three surface concepts should remain required before lemma recall is admitted."}
+{"id":"prod_three_abu_muslim","query":"ابو مسلم الخراساني","bucket":"production_three_name","expectation":"A personal name should remain a literal surface search when CAMeL cannot supply trustworthy lemmas."}
+{"id":"prod_three_first_fajr_adhan","query":"الاذان الاول للفجر","bucket":"production_three","expectation":"Orthographic normalization and noun lemmas may help, but the literal jurisprudential phrase should rank first."}
+{"id":"prod_three_khawarij","query":"هل الخوارج كفار","bucket":"production_three","expectation":"The question phrase should retrieve directly relevant discussions without dropping the interrogative token from a lemma conjunction."}
+{"id":"prod_three_if_only_knew","query":"قولهم ليت شعري","bucket":"production_three","expectation":"A conventional quotation formula should preserve literal sequence and wording."}
+{"id":"prod_long_martyrdom","query":"سأل الله الشهادة بصدق","bucket":"production_long","expectation":"The complete four-word phrase should outrank pages matching only its common lemmas."}
+{"id":"prod_long_falaq","query":"قل أعوذ برب الفلق","bucket":"production_long_quote","expectation":"A Quranic phrase should preserve exact surface wording despite weak MSA analyses."}
+{"id":"prod_long_tattler","query":"لا يدخل الجنة قتات","bucket":"production_long_quote","expectation":"The hadith phrase should rank literal citations before inflectional recall."}
+{"id":"prod_long_prostration_ground","query":"السجود لا يجوز الا على الارض","bucket":"production_long","expectation":"A long legal proposition should not be broadened by dropping backoff or function words."}
+{"id":"prod_long_gender_change","query":"حكم نكاح بعد تغيير الجنس","bucket":"production_long","expectation":"The full contemporary legal query should retain all surface concepts before lemma-only recall."}

@@ -1,0 +1,690 @@
+{
+  "seed": "20260718",
+  "comparisons": {
+    "36d7865daa150c2d": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "07bbd2077a3aaacc": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "4155322982c5db77": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "84a3ae267f7ace5c": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "b50408c0cf9e86d4": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "a01697ab6d55fcb0": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "e355c5e71843db51": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "d8b76071b1b3fb79": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "297561c0f211be16": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "16e4436cc7e294aa": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "61cb8e0791ca9085": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "937e4ad3d164a551": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "5883387ba82301b9": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "ba5aef449287feb0": {
+      "A": [
+        "camel-mle"
+      ],
+      "B": [
+        "alma",
+        "camel-bert"
+      ]
+    },
+    "eeae850aedc1b392": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "76d7736d329612d2": {
+      "A": [
+        "camel-mle"
+      ],
+      "B": [
+        "alma",
+        "camel-bert"
+      ]
+    },
+    "d9e2c1782194c0e5": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "be1dae0f0632bff8": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "d9d9973aad0553f7": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "8e5bd42033a9b28d": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "8ccb273aa217dea1": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "88eb0672b707f83d": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "79db2d979441343b": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "4bc82cddf73d72ba": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "4a69aa7512cbde67": {
+      "A": [
+        "camel-bert",
+        "camel-mle"
+      ],
+      "B": [
+        "alma"
+      ]
+    },
+    "a762a3f186f2693c": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "f0dede7094268573": {
+      "A": [
+        "alma",
+        "camel-bert"
+      ],
+      "B": [
+        "camel-mle"
+      ]
+    },
+    "a2b347edf404eeb5": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "f2dea6febd96afb1": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "5d8ec679c4cb2603": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "1f66faf8c482348b": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "536ff605e93db644": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "5f1f60a3e4d9cac6": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "19cc3d1c743b062a": {
+      "A": [
+        "alma",
+        "camel-mle"
+      ],
+      "B": [
+        "camel-bert"
+      ]
+    },
+    "5274bcc009ed050f": {
+      "A": [
+        "camel-bert"
+      ],
+      "B": [
+        "alma"
+      ],
+      "C": [
+        "camel-mle"
+      ]
+    },
+    "96e8c1b7e959fd43": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "bb4192fc2ae7b5c1": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "bb14e6a52919e827": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "730c345779aff91d": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-mle"
+      ],
+      "C": [
+        "camel-bert"
+      ]
+    },
+    "030aaa1bbffd5334": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-mle"
+      ],
+      "C": [
+        "camel-bert"
+      ]
+    },
+    "4da1a2343150c145": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "3a11376ebb8934f2": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "f38eac85b3d5b033": {
+      "A": [
+        "camel-bert",
+        "camel-mle"
+      ],
+      "B": [
+        "alma"
+      ]
+    },
+    "c9c1fac6391d44ea": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "9d3c3c4ae2a6bcc4": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "608273a5075aa5b9": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "e6c21e9fbfb7d8d1": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "6eadbe961a9c2085": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "e3b18ec0f360d628": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "859656cea6648ad2": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "681e31d762d6c64c": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "cf19150afc49380e": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "b029ceef30a67b68": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "be05edd769e0d679": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "46cdc780d60b155a": {
+      "A": [
+        "alma",
+        "camel-bert"
+      ],
+      "B": [
+        "camel-mle"
+      ]
+    },
+    "51b570b899bcc3d6": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "85314435387393bf": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "88349a46e5a6cc24": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "e8865aa916302052": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "fa23fdde19c95565": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "a16383b1bafc5d76": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "a5848177821eee49": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "014657673ab72e7e": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "bdea04b9bf7137dd": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "ef47083d83c6530e": {
+      "A": [
+        "camel-mle"
+      ],
+      "B": [
+        "alma",
+        "camel-bert"
+      ]
+    },
+    "417fdf45814a22f1": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "1b58c1cff2738db5": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "ee324056bcf61f24": {
+      "A": [
+        "camel-mle"
+      ],
+      "B": [
+        "alma",
+        "camel-bert"
+      ]
+    },
+    "9563483dd2f94c26": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "8b1e2fd9af946a87": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "61a65248cdee683e": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "14d1bf08a73e3894": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "7600d6f197cfcd65": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "f4fbcc591a615f8e": {
+      "A": [
+        "alma"
+      ],
+      "B": [
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "94bcb619a18efa4d": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "5b10fdb2a17638dc": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "63a084bd2976a7fa": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "321fd9c4bfdd8b04": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "9a6289317bbacd03": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "237e39c92692b4c2": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "61141387b203ebbd": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "98dd4f18840e7c7f": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "b2ac9e1fc74e1eff": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "7f5092d959d57d60": {
+      "A": [
+        "camel-bert",
+        "camel-mle"
+      ],
+      "B": [
+        "alma"
+      ]
+    },
+    "8f498fad79c6148c": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "4c2bf9f6f2945fde": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "606da4de7c4bd8ed": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "c8d62498b0db366f": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "6485d8adb1d3a142": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "20e9dce1c26baa3b": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    },
+    "a29faf37951cc939": {
+      "A": [
+        "alma",
+        "camel-bert",
+        "camel-mle"
+      ]
+    }
+  }
+}

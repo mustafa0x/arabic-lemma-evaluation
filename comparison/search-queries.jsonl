@@ -1,0 +1,24 @@
+{"id":"title_book_purity","query":"كتاب الطهارة","bucket":"literal_heading","expectation":"Literal book and chapter headings should stay ahead of incidental citations."}
+{"id":"phrase_seeking_knowledge","query":"طلب العلم","bucket":"common_phrase","expectation":"The established phrase should rank ahead of loose طلب and علم co-occurrences."}
+{"id":"ambiguous_hadith_science","query":"علم الحديث","bucket":"ambiguous","expectation":"The noun phrase about hadith sciences should not expand as every use of the roots علم and حدث."}
+{"id":"forgive_past","query":"استغفر الله","bucket":"inflection","expectation":"Past and present forms of the same verb should gain recall without changing the leading literal results."}
+{"id":"forgive_present","query":"يستغفر الله","bucket":"inflection","expectation":"Past and present forms of the same verb should gain recall without changing the leading literal results."}
+{"id":"establish_prayer","query":"إقامة الصلاة","bucket":"lemma","expectation":"Useful nominal variation should match while the literal phrase remains dominant."}
+{"id":"responsibility_imam","query":"مسؤولية الإمام","bucket":"root_placeholder","expectation":"CAMeL root placeholders must not be passed through Lucene tokenization or turn a narrow phrase into a corpus-wide match."}
+{"id":"responsibilities_imam","query":"مسؤوليات الإمام","bucket":"lemma","expectation":"The plural مسؤوليات should share a lemma with مسؤولية without root expansion."}
+{"id":"water_rulings_plural","query":"أحكام المياه","bucket":"lemma","expectation":"Plural forms should connect to their singular lemmas without broad root matching."}
+{"id":"water_rulings_singular","query":"أحكام الماء","bucket":"lemma","expectation":"Singular and plural water queries should return substantially compatible leading results."}
+{"id":"valid_sale","query":"يصح البيع","bucket":"inflection","expectation":"Verb morphology should help without conflating unrelated analyses of يصح."}
+{"id":"classical_quran_phrase","query":"وقرن في بيوتكن","bucket":"classical_ambiguity","expectation":"A classical phrase should preserve its literal match even when the MSA model selects weak unigram analyses."}
+{"id":"normalized_imam","query":"مسؤولية الامام","bucket":"orthographic_normalization","expectation":"Alef normalization should not require morphological or root expansion."}
+{"id":"single_water_plural","query":"المياه","bucket":"single_word_lemma","expectation":"A plural noun should retrieve its singular lemma while preserving literal plural matches first."}
+{"id":"single_water_singular","query":"ماء","bucket":"single_word_lemma","expectation":"Singular and plural forms should be connected through the lemma rather than an incomplete root."}
+{"id":"single_knowledge","query":"علم","bucket":"single_word_ambiguous","expectation":"A highly ambiguous surface form should not silently become an unrestricted root search."}
+{"id":"write_verb","query":"يكتب","bucket":"single_word_inflection","expectation":"Inflected verbs should connect to their lemma without matching every derivation of the root كتب."}
+{"id":"book_noun","query":"كتاب","bucket":"single_word_ambiguous_root","expectation":"The noun كتاب should not be treated as equivalent to every word derived from كتب."}
+{"id":"good_deeds_plural","query":"الحسنات","bucket":"lemma_asymmetry","expectation":"Plural good deeds should connect to حسنة without allowing the ambiguous حسن analysis to outrank literal matches."}
+{"id":"good_deed_singular","query":"حسنة","bucket":"lemma_asymmetry","expectation":"A near-tied second CAMeL lemma should recover plural good deeds while the ambiguous حسن family remains only a low-weight recall tail."}
+{"id":"acts_of_obedience","query":"الطاعات","bucket":"backoff","expectation":"An MLE backoff analysis must not replace the surface query; missing lemma recall should remain visible in the benchmark."}
+{"id":"rare_dual_fatwas","query":"الفتويين","bucket":"rare_inflection","expectation":"The rare dual form should keep its literal pages first, then retrieve useful فتوى-family passages."}
+{"id":"rare_dual_groups","query":"جماعتان","bucket":"rare_inflection","expectation":"The rare dual should connect to جماعة after the small literal result set without root-level noise."}
+{"id":"rare_plural_beginnings","query":"الابتداءات","bucket":"rare_inflection","expectation":"The rare plural should connect to ابتداء and provide relevant first-page recall after literal matches."}
