@@ -1,122 +1,100 @@
-# Arabic lemma diagnostics for CAMeL Tools
+# CAMeL BERT lemma diagnostics
 
-This repository preserves two related pieces of evidence:
+This repository documents an unexpected result from CAMeL Tools' BERT-based
+Arabic analyzer. It includes the exact inputs, the top five analyses for each
+token, and a small comparison with CAMeL MLE and SinaLab Alma.
 
-- seven context-sensitive CAMeL BERT examples with complete ranked outputs (up
-  to five analyses per token);
-- a frozen, search-oriented comparison of CAMeL MLE, CAMeL BERT, and SinaLab
-  Alma.
+## What we observed
 
-It is intended for diagnosis and audit. It is not a general Arabic
-lemmatization benchmark and does not support a state-of-the-art claim.
+CAMeL returns a different lemma for the same fully vocalized word when a small
+amount of context is added:
 
-CAMeL maintainers can start with
-[`MAINTAINER_BRIEF.md`](MAINTAINER_BRIEF.md).
-
-## Main observation
-
-For the same fully vocalized token, CAMeL BERT selected different analyses as
-context changed:
-
-| Input | Rank 1 for `أَعُوذُ` | Rank 2 |
+| Input | First result for `أَعُوذُ` | Second result |
 | --- | --- | --- |
-| `أَعُوذُ` | `عاذ`, lexical verb, score 1.0 | `عَوَّذ`, lexical verb, score 1.0 |
-| `قُلْ أَعُوذُ` | `اعوذ`, backoff proper noun, score 1.0 | `عاذ`, lexical verb, score 0.6364 |
-| `قُلْ أَعُوذُ بِرَبِّ` | `عاذ`, lexical verb, score 1.0 | `عَوَّذ`, lexical verb, score 1.0 |
+| `أَعُوذُ` | `عاذ`, dictionary verb, score 1.0 | `عَوَّذ`, dictionary verb, score 1.0 |
+| `قُلْ أَعُوذُ` | `اعوذ`, generated proper name, score 1.0 | `عاذ`, dictionary verb, score 0.6364 |
+| `قُلْ أَعُوذُ بِرَبِّ` | `عاذ`, dictionary verb, score 1.0 | `عَوَّذ`, dictionary verb, score 1.0 |
 
-The complete historical outputs are in
-[`results/camel-tools-1.5.7-ranked.json`](results/camel-tools-1.5.7-ranked.json)
-and
-[`results/camel-tools-1.6.0-ranked.json`](results/camel-tools-1.6.0-ranked.json).
-They contain the same rankings, model configuration, and recorded model-data
-hashes.
+This does not mean that BERT is generally worse. For example, in
+`قولهم ليت شعري`, MLE returns adjectival `شِعْرِيّ`, while BERT and Alma return
+the expected lemma `شِعْر`.
 
-The historical 1.6.0 report records Transformers 4.43.4, below CAMeL Tools
-1.6.0's declared minimum of 4.44.0. It is therefore useful as frozen evidence,
-not as a supported or fully locked 1.6.0 environment. See
-[`METHOD.md`](METHOD.md#historical-runs).
+## Small comparison
 
-CAMeL BERT also makes useful corrections. In `قولهم ليت شعري`, for example,
-the frozen comparison records CAMeL MLE selecting adjectival `شِعْرِيّ`, while
-CAMeL BERT and Alma select the expected lemma `شِعْر`. The focused examples are
-a request to understand a particular backoff choice, not a claim that
-contextual disambiguation is generally worse.
+We also compared the three analyzers on 44 search queries and 24 passages:
 
-## Rerun the focused cases
+| Sample | Measure | Words | CAMeL MLE | CAMeL BERT | Alma |
+| --- | --- | ---: | ---: | ---: | ---: |
+| search queries | expected lemma | 88 | 71 | 72 | 71 |
+| search queries | normalized search form | 90 | 79 | 83 | 79 |
+| passages | expected lemma | 468 | 367 | 373 | 378 |
+| passages | normalized search form | 473 | 401 | 410 | 412 |
 
-Use Python 3.12 and install CAMeL's default data package:
+The lemma comparison ignores diacritics. The search comparison also applies
+the spelling normalization used by our search engine. This is a small sample
+of difficult search cases, not a general Arabic lemmatization benchmark.
+
+The inputs, outputs, and judgments are in [`comparison/`](comparison). The
+direct CAMeL MLE/BERT differences are in
+[`camel-mle-vs-bert-lexical-deltas.csv`](camel-mle-vs-bert-lexical-deltas.csv).
+
+## Reproduce the result
 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 camel_data -i defaults
-python -m pip check
-
-python scripts/run_camel_bert.py cases/camel-bert-context.jsonl \
-  --output results/new-ranked-run.json
-python -m pip freeze > results/new-ranked-run.freeze.txt
-python scripts/validate.py --ranked-report results/new-ranked-run.json
+python scripts/run_camel_bert.py camel-bert-context.jsonl \
+  --output new-ranked-run.json
+python scripts/validate.py --ranked-report new-ranked-run.json
 ```
 
-The requirements file contains top-level pins, not a complete transitive lock.
-The runner records package versions, exact input tokens, the dediacritized BERT
-input, a separately captured feature prediction, explicit cache settings, and
-model-data hashes.
+The recorded output is in
+[`camel-tools-1.6.0-ranked.json`](camel-tools-1.6.0-ranked.json).
 
-## Frozen comparison
+## Question for the CAMeL team
 
-The broader comparison is an audit bundle rather than an end-to-end
-reproduction. Its inputs, named outputs, ballots, final judgments, and analyzer
-maps are committed. The service-calling and ballot-generation source is not,
-and exact remote service revisions were unavailable.
+In `قُلْ أَعُوذُ`, why does the generated proper-name result `اعوذ` rank above
+the available verb `عاذ`, when `عاذ` ranks first both without context and with
+one more word of context?
 
-Two measures are reported:
+Is this expected? If not, where would you recommend looking for the cause, and
+would these examples be useful as a regression test?
 
-| Sample | Measure | Rows | CAMeL MLE | CAMeL BERT | Alma |
-| --- | --- | ---: | ---: | ---: | ---: |
-| query tokens | lexical identity | 88 | 71 | 72 | 71 |
-| query tokens | search output | 90 | 79 | 83 | 79 |
-| passage tokens | lexical identity | 468 | 367 | 373 | 378 |
-| passage tokens | search output | 473 | 401 | 410 | 412 |
+<details>
+  <summary><h2>Method and limitations</h2></summary>
 
-- **Lexical identity** covers decided rows with a lexical gold outcome.
-  `ALL_WRONG` rows remain in the denominator because they supply a canonical
-  lemma; every preserved system receives zero credit on those rows.
-- **Search output** compares the stored `production_search_term`, including an
-  empty output where the judgment says no trusted lemma should be used. This is
-  specific to the source search application, not linguistic lemma accuracy.
+### Focused cases
 
-The earlier README's “lemma” row mixed lexical matches with exact matches to
-`no_trusted_lemma` alternatives. It is not used as lemma accuracy here.
+[`camel-bert-context.jsonl`](camel-bert-context.jsonl) contains the
+seven exact inputs. The runner saves the top five analyses for each token,
+along with package versions and hashes of the model files.
 
-A paired CAMeL MLE/BERT report is in
-[`reports/camel-mle-vs-bert-lexical-deltas.csv`](reports/camel-mle-vs-bert-lexical-deltas.csv).
-On rows with a selected lexical gold candidate, it contains four BERT fixes and
-three regressions in the query sample, and 16 fixes and 10 regressions in the
-passage sample.
+The recorded CAMeL Tools 1.5.7 and 1.6.0 runs produced the same rankings. The
+1.6.0 run used Transformers 4.43.4, although that CAMeL release requires 4.44.0
+or newer. The current requirements use a supported Transformers version.
 
-These counts are descriptive. The samples were assembled for a practical
-search workflow and include deliberately difficult forms; no general system
-ranking should be inferred.
+The runner also records a separate BERT feature prediction to help with
+diagnosis. It comes from a second public API call, so it should not be treated
+as the exact internal prediction that produced the ranked results.
 
-## Check the committed artifacts
+### Comparison
 
-```bash
-python scripts/validate.py
-python scripts/build_delta_report.py --check
-```
+The comparison contains 44 search queries and 24 passages selected for a
+practical Arabic search project. It includes deliberately difficult cases and
+is not a random sample of Arabic.
 
-The validator checks the focused-case claims, recorded source hashes, and the
-reported totals. It does not attempt to recreate the missing comparison
-pipeline.
+The files preserve the analyzer outputs and final judgments. They do not
+preserve reviewer details, the code that called the remote services and built
+the ballots, or the exact service versions. The reported scores can be checked
+from the committed files, but the collection process cannot be rerun exactly.
 
-## Repository map
+“Expected lemma” compares lemmas after removing diacritics. “Normalized search
+form” also applies the spelling rules used by the search engine. These results
+should not be read as a general ranking of Arabic lemmatizers.
 
-- [`MAINTAINER_BRIEF.md`](MAINTAINER_BRIEF.md): smallest actionable report.
-- [`METHOD.md`](METHOD.md): environments, measures, and limits.
-- [`cases/`](cases): seven focused inputs.
-- [`results/`](results): historical ranked CAMeL BERT reports.
-- [`comparison/`](comparison): frozen comparison artifacts.
-- [`reports/`](reports): reports derived from committed data.
+The repository's MIT license covers its original code and documentation, not
+third-party texts, models, or service outputs.
+
+</details>

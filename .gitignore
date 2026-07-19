@@ -2,5 +2,5 @@ __pycache__/
 *.pyc
 .venv/
 .ruff_cache/
-results/new-ranked-run.json
-results/new-ranked-run.freeze.txt
+new-ranked-run.json
+new-ranked-run.freeze.txt

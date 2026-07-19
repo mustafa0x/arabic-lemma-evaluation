@@ -1,6 +1,7 @@
 # Frozen comparison artifacts
 
-This directory is an audit bundle, not a complete experiment pipeline.
+These files can be used to review and rescore the comparison. They do not
+contain everything needed to rerun data collection.
 
 - `search-queries.jsonl` and `representative-queries.jsonl`: query inputs.
 - `context-passages.jsonl`: passage inputs.
@@ -9,9 +10,8 @@ This directory is an audit bundle, not a complete experiment pipeline.
 - `*-grades.csv`: final judgments with ballot fields preserved.
 - `*-analyzer-map.json`: maps ballot labels back to analyzers.
 
-The committed files are sufficient to reproduce the reported counts and the
-paired CAMeL MLE/BERT lexical-delta report. They are not sufficient to call the
-remote services or regenerate the ballots from raw responses. Exact service
-revisions and reviewer-process metadata were not preserved.
+They reproduce the reported counts and the paired CAMeL MLE/BERT lexical-delta
+report. They cannot call the remote services or rebuild the ballots. Exact
+service versions and reviewer details were not recorded.
 
-See [`../METHOD.md`](../METHOD.md) for measure definitions and limits.
+See the method and limitations in the [main README](../README.md).

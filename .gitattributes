@@ -1,5 +1,5 @@
-cases/*.jsonl text eol=lf
+camel-bert-context.jsonl text eol=lf
 comparison/*.jsonl text eol=lf
 comparison/*-analyzer-map.json text eol=lf
 comparison/*.csv -text diff
-reports/*.csv text eol=lf
+camel-mle-vs-bert-lexical-deltas.csv text eol=lf

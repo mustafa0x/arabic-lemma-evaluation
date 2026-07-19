@@ -131,13 +131,13 @@ def load_ranked_report(path: Path, cases: list[dict], cases_hash: str) -> dict:
 
 
 def validate_focused_reports() -> tuple[list[dict], list[dict]]:
-    cases_path = ROOT / "cases" / "camel-bert-context.jsonl"
+    cases_path = ROOT / "camel-bert-context.jsonl"
     cases = load_jsonl(cases_path)
     reports = [
         load_ranked_report(path, cases, sha256(cases_path))
         for path in (
-            ROOT / "results" / "camel-tools-1.5.7-ranked.json",
-            ROOT / "results" / "camel-tools-1.6.0-ranked.json",
+            ROOT / "camel-tools-1.5.7-ranked.json",
+            ROOT / "camel-tools-1.6.0-ranked.json",
         )
     ]
 
@@ -171,7 +171,7 @@ def validate_focused_reports() -> tuple[list[dict], list[dict]]:
 
 
 def compare_new_report(path: Path, cases: list[dict], historical: dict) -> None:
-    cases_path = ROOT / "cases" / "camel-bert-context.jsonl"
+    cases_path = ROOT / "camel-bert-context.jsonl"
     report = load_ranked_report(path, cases, sha256(cases_path))
     rankings = (
         "match"
