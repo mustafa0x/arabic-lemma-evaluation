@@ -1,73 +1,121 @@
 # Method and limits
 
+This repository contains two bodies of evidence with different reproducibility
+boundaries:
+
+1. seven focused CAMeL BERT cases that can be rerun locally;
+2. a larger frozen comparison that can be inspected and rescored, but not
+   regenerated end to end from the committed files.
+
 ## Focused CAMeL BERT cases
 
-The seven inputs in `cases/camel-bert-context.jsonl` freeze a small set of
-context-sensitive observations. They include the same word alone, in a
-two-token phrase, in a three-token phrase, and in longer passages.
+`cases/camel-bert-context.jsonl` preserves the exact text used for the focused
+observations. The historical runner tokenized each case with `text.split()` and
+saved up to five analyses in returned rank order. Each candidate includes its
+normalized score, lemma, source, gloss, part of speech, root, and pattern.
 
-For each token, the runner saves the top five analyses in model order. Each
-entry includes the score, lemma, source, gloss, part of speech, root, and
-pattern. It also records the installed package versions and hashes the model,
-configuration, morphology database, and input file.
+### Historical runs
 
-The supplied reports were produced with:
+| Report | Python | PyTorch | Transformers | CAMeL Tools |
+| --- | --- | --- | --- | --- |
+| `camel-tools-1.5.7-ranked.json` | 3.12.13 | 2.11.0 | 4.43.4 | 1.5.7 |
+| `camel-tools-1.6.0-ranked.json` | 3.12.13 | 2.11.0 | 4.43.4 | 1.6.0 |
 
-- Python 3.12.13;
-- PyTorch 2.11.0;
-- Transformers 4.43.4;
-- CAMeL Tools 1.5.7 and 1.6.0; and
-- `pretrained_cache=False`.
+The reports contain the same model configuration, recorded model and
+morphology-file hashes, and ranked outputs. Both record
+`pretrained_cache=False`. Other cache sizes and a complete transitive package
+freeze were not preserved, so the repository cannot show that CAMeL Tools code
+was the only environmental difference.
 
-The two versions used the same model and morphology data. Their ranked results
-are identical after ignoring timings and other run metadata.
+CAMeL Tools 1.6.0 declares Transformers 4.44.0 or newer, while the historical
+1.6.0 report records 4.43.4. The report remains useful as frozen evidence, but
+it is not a supported 1.6.0 environment.
 
-## Comparison samples
+Tagged source references:
 
-The query comparison has 44 queries and 91 token positions. One position was
-left uncertain, leaving 90 adjudicated positions. The inputs combine a small
-diagnostic set with representative search queries.
+- <https://github.com/CAMeL-Lab/camel_tools/blob/v1.5.7/setup.py>
+- <https://github.com/CAMeL-Lab/camel_tools/blob/v1.6.0/setup.py>
+- <https://github.com/CAMeL-Lab/camel_tools/blob/v1.6.0/camel_tools/disambig/bert/unfactored.py>
 
-The context comparison has 24 passages and 473 adjudicated token positions.
-The passages were frozen before the final comparison and include Classical
-Arabic, heritage prose, and modern explanatory text.
+### Current runner
 
-Each report preserves the selected output from:
+`scripts/run_camel_bert.py` adds diagnostic fields while retaining the
+historical ranked-output shape. It records:
 
-- CAMeL Tools MLE;
-- CAMeL Tools unfactored BERT; and
-- SinaLab Alma.
+- exact input tokens and the dediacritized tokens supplied to BERT;
+- a feature prediction for the model's configured scoring features;
+- each candidate's values for those features and its exact match count;
+- explicit batch, device, and cache settings;
+- package versions and dataset-relative model-data hashes.
 
-It also preserves CAMELMORPH candidates as inventory information. Candidate
-availability is not the same as selecting the right lemma, so it is not scored
-as another lemmatizer.
+The feature prediction is captured in a separate public
+`tag_sentence(..., use_analyzer=False)` pass. It is not an instrumented copy of
+the private prediction used inside `disambiguate`. The final CAMeL score may
+also reflect its tag-frequency tie-breaker and backoff penalty, so
+`feature_match_count` is not a reconstruction of the complete score.
 
-The blank ballot CSVs show the alternatives without analyzer names. A judgment
-chooses the correct candidate, marks all candidates wrong, or records
-uncertainty. The completed grading CSVs preserve those judgments. When all
-candidates are wrong, they also give the intended lemma and search term. The
-analyzer maps were kept aside while the outputs were graded and are included
-here for auditability. The named analyzer outputs and the judgments are
-sufficient for `scripts/validate.py` to reproduce the reported scores without
-relying on those maps.
+The current runner uses CPU inference, batch size 32,
+`pretrained_cache=False`, analyzer cache size zero, and ranking cache size zero.
+Those settings make a diagnostic rerun explicit; they are not a claim about
+the cause of the historical result.
 
-Two measures are kept separate:
+`requirements.txt` contains top-level pins that satisfy CAMeL Tools 1.6.0's
+declared version constraints. It is not a full lockfile. Save `pip freeze`
+beside a new result when exact package identity matters. CAMeL model data can
+change independently, so the report hashes the files it used.
 
-- **Lemma:** whether the selected lexical lemma matches the adjudicated choice.
-- **Search term:** whether the result becomes the intended search form after
-  the project's narrow Arabic spelling normalization.
+## Frozen comparison
 
-This distinction matters in a search evaluation, but the normalized score
-should not be read as linguistic lemmatization accuracy.
+The query sample contains 44 queries and 91 token positions. One position is
+`UNCERTAIN`, leaving 90 decided positions. The passage sample contains 24
+passages and 473 decided token positions. The inputs were selected for a
+practical Arabic search workflow and include difficult forms; they are not
+random samples of Arabic.
 
-## What this does not establish
+Each named report preserves selected outputs from CAMeL MLE, CAMeL unfactored
+BERT, and SinaLab Alma. CAMELMORPH candidates are retained as inventory
+information, not as a fourth selected-output system.
 
-The samples are too small and deliberately too search-oriented to rank Arabic
-lemmatizers in general. They do not replace established treebank or
-morphological-disambiguation evaluations. They also do not establish the best
-system for Classical Arabic.
+For each sample, the repository contains a blank ballot, a completed grade
+file, and a separate map from analyzer-neutral labels to analyzers. A judgment
+selects a candidate, marks all candidates wrong, or records uncertainty. The
+completed grade files retain the ballot fields, and the analyzer maps remain
+available for manual inspection.
 
-The larger comparison used remote services. Their URLs and parameters are in
-the reports, but their deployed source revisions were unavailable and are
-therefore marked `unverified`. Latency values in those files are observations,
-not controlled performance benchmarks.
+The artifacts preserve final judgments but not reviewer count or
+qualifications, independent annotations, an adjudication stage, agreement
+statistics, or a versioned annotation guide. They should therefore be
+described as frozen judgments, not as a documented multi-annotator study.
+
+### Measures
+
+- **Lexical identity:** agreement on decided rows with a lexical gold outcome.
+  The denominator includes `ALL_WRONG` rows that supply a canonical lemma; all
+  preserved systems receive zero credit on those rows.
+- **Search output:** agreement on the stored `production_search_term`. This
+  includes an empty output when the chosen outcome is `no_trusted_lemma` and
+  uses the canonical search term on `ALL_WRONG` rows. It is a project-specific
+  search measure, not linguistic lemma accuracy.
+
+The paired delta report includes selected lexical-gold rows where CAMeL MLE and
+CAMeL BERT differ in lexical correctness. `ALL_WRONG`, `UNCERTAIN`, and gold
+`no_trusted_lemma` rows are excluded.
+
+### Reproducibility boundary
+
+The comparison inputs, named outputs, ballots, final grades, and analyzer maps
+are committed. The code that called remote services, normalized responses, and
+built ballots is not. Exact deployed service revisions were also unavailable.
+The comparison should therefore be described as a frozen audit bundle rather
+than an end-to-end reproducible experiment.
+
+## General limits
+
+The samples are too small and search-oriented to rank Arabic lemmatizers in
+general, establish a state-of-the-art result, or identify the best system for
+Classical Arabic. Latency fields in the frozen reports are observations, not
+controlled performance measurements.
+
+The top-level MIT license covers authored code and documentation in this
+repository. It does not by itself relicense third-party Arabic texts, CAMeL
+model data, or remote-service outputs.

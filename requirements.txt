@@ -1,1 +1,4 @@
+# Top-level pins for a CAMeL Tools 1.6.0 diagnostic rerun; not a full lockfile.
 camel-tools==1.6.0
+torch==2.11.0
+transformers==4.44.2

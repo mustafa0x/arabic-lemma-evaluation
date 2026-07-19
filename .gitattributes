@@ -1,1 +1,5 @@
-comparison/*.csv -diff -merge -text
+cases/*.jsonl text eol=lf
+comparison/*.jsonl text eol=lf
+comparison/*-analyzer-map.json text eol=lf
+comparison/*.csv -text diff
+reports/*.csv text eol=lf
